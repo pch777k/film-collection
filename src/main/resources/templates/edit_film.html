@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Edit film</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+		<div class="mx-auto">
+			<h3 class="text-white">Edit film</h3>
+		</div>	
+	</nav>
+
+<div class="content">
+	<div class="container my-5">
+		<form action="#" th:action="@{/save}" th:object="${film}" method="post">
+			<div class="text-center">
+
+				<div class="form-group row ">
+					<label for="id" class="col-sm-2 col-form-label">Id</label>
+					<div class="col-sm-6">
+						<input type="text" th:field="*{id}" class="form-control" id="id"
+							readonly>
+					</div>
+				</div>
+				<div class="form-group row ">
+					<label for="title" class="col-sm-2 col-form-label">Title</label>
+					<div class="col-sm-6">
+						<input type="text" th:field="*{title}" class="form-control"
+							id="title">
+					</div>
+				</div>
+				<div class="form-group row ">
+					<label for="director" class="col-sm-2 col-form-label">Director</label>
+					<div class="col-sm-6">
+						<input type="text" th:field="*{director}" class="form-control"
+							id="director">
+					</div>
+				</div>
+
+				<div class="form-group row ">
+					<label for="year" class="col-sm-2 col-form-label">Year</label>
+					<div class="col-sm-6">
+						<input type="text" th:field="*{date}" class="form-control"
+							id="year">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="country" class="col-sm-2 col-form-label">Country</label>
+					<div class="col-sm-6">
+						<input type="text" th:field="*{country}" class="form-control"
+							id="country">
+					</div>
+				</div>
+				<button type="submit" class="btn btn-outline-dark mt-3">Edit</button>
+				
+				<a class="btn btn-outline-dark mt-3" role="button" th:href="@{'/'}">Cancel</a>
+			</div>	
+		</form>
+	</div>
+</div>
+	
+	<div th:replace = "fragments/footer :: footer"></div>
+	
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
