@@ -2,7 +2,6 @@ package pl.film.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,8 +18,11 @@ import pl.film.service.FilmService;
 @Controller
 public class FilmController {
 	
-	@Autowired
 	private FilmService filmService;
+
+	public FilmController(FilmService filmService) {
+		this.filmService = filmService;
+	}
 
 	@RequestMapping({"/","/index"})
 	public String viewHomePage(Model model) {
