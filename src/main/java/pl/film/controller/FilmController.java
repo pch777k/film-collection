@@ -13,8 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 import pl.film.model.Film;
 import pl.film.service.FilmService;
 
-
-
 @Controller
 public class FilmController {
 	
